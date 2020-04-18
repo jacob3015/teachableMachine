@@ -4,8 +4,8 @@ var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Webgl.json"
 
 async function init()
 {
-    const modelURL = "./model.json";
-    const metadataURL = "./metadata.json";
+    const modelURL = "./pose_model_test/model.json";
+    const metadataURL = "./pose_model_test/metadata.json";
 
     // load the model and metadata
     // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
