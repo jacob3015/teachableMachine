@@ -55,16 +55,10 @@ async function predict()
     // finally draw the poses
     drawPose(pose);
 
-    if(Prediction[0].probability.toFixed(2) >= 0.9)
-    {
+    if(Prediction[0].probability.toFixed(2) >= 0.8)
         status = "jump";
-        sendKey(status);
-    }
     else
-    {
         status = "stand";
-        sendKey(status);
-    }
 }
 
 function drawPose(pose)
@@ -86,3 +80,5 @@ function sendKey(value)
 {
     unityInstance.SendMessage("Player", "getKey", value);
 }
+
+sendKey(status);
