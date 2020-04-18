@@ -1,4 +1,5 @@
 let model, webcam, ctx, labelContainer, maxPredictions;
+
 var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Webgl.json", {onProgress: UnityProgress});
 
 async function init()
@@ -36,6 +37,7 @@ async function loop(timestamp)
     window.requestAnimationFrame(loop);
 }
 
+var status = "stand";
 async function predict()
 {
     // Prediction #1: run input through posenet
@@ -52,6 +54,17 @@ async function predict()
     }
     // finally draw the poses
     drawPose(pose);
+
+    if(Prediction[0].probability.toFixed(2) >= 0.9)
+    {
+        status = "jump";
+        sendKey(status);
+    }
+    else
+    {
+        status = "stand";
+        sendKey(status);
+    }
 }
 
 function drawPose(pose)
