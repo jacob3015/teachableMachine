@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!--Unity WebGL Game-->
     <title>Unity WebGL Player | testGame</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
@@ -15,24 +17,32 @@
     <script src="./pose_model_test/pose_test.js"></script>
 
     <style>
-      #unityContainer
+      div.teachable-content
       {
-        float: right;
+        position: fixed;
+        top: 450px;
+        left: 600px;
+        margin-right: 50px;
       }
-      #label-container
+
+      div.webgl-content
       {
-        float: left;
+        position: fixed;
+        left: 1600px;
       }
     </style>
 
   </head>
   <body>
+
     <!--Teachable Machine-->
-    <div>Teachable Machine Pose Model</div>
-    <button type="button" onclick="init()">Start</button>
-    <div><canvas id="canvas"></canvas></div>
-    <div id="label-container"></div>
-    <!--Teachable Machine-->
+    <div class="teachable-content">
+      <div><b>Teachable Machine</b></div>
+      <br>
+      <button type="button" onclick="init()">Start Camera</button>
+      <div><canvas id="canvas"></canvas></div>
+      <div id="label-container"></div>
+    </div>
     
     <!--Unity WebGL Game-->
     <div class="webgl-content">
@@ -43,7 +53,6 @@
         <div class="title">testGame</div>
       </div>
     </div>
-    <!--Unity WebGL Game-->
 
   </body>
 </html>
