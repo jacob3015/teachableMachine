@@ -38,6 +38,7 @@ async function loop(timestamp)
 }
 
 var status = "stand";
+
 async function predict()
 {
     // Prediction #1: run input through posenet

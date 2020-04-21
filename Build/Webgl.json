@@ -1,7 +1,7 @@
 {
 "companyName": "DefaultCompany",
-"productName": "testGame",
-"productVersion": "0.1",
+"productName": "git_capstone",
+"productVersion": "1.0",
 "dataUrl": "Webgl.data.unityweb",
 "wasmCodeUrl": "Webgl.wasm.code.unityweb",
 "wasmFrameworkUrl": "Webgl.wasm.framework.unityweb",

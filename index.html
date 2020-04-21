@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <!--Unity WebGL Game-->
-    <title>Unity WebGL Player | testGame</title>
+    <title>Action Fit</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="TemplateData/UnityProgress.js"></script>
@@ -19,13 +19,47 @@
     <style>
       .teachable-content
       {
-        margin-left: 800px;
-        margin-top: 150px;
+        display: table;
+        margin-top: 10%;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      #name
+      {
+        display: table;
+        margin-right: auto;
+        margin-left: auto;
+        font-size: xx-large;
+      }
+
+      #start
+      {
+        display: table;
+        margin-right: auto;
+        margin-left: auto;
+        border : 1px solid skyblue;
+        color: skyblue;
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0);
+      }
+
+      #start:hover
+      {
+        display: table;
+        margin-right: auto;
+        margin-left: auto;
+        border : 1px solid skyblue;
+        color: white;
+        border-radius: 5px;
+        background-color: skyblue;
       }
 
       .webgl-content
       {
-        margin-top: 100px;
+        display: table;
+        margin-right: auto;
+        margin-left: auto;
       }
     </style>
 
@@ -34,11 +68,11 @@
 
     <!--Teachable Machine-->
     <div class="teachable-content">
-      <div><b>Teachable Machine</b></div>
+      <div id="name"><b>Action Fit</b></div>
       <br>
-      <button type="button" onclick="init()">Start Camera</button>
+      <button id="start" type="button" onclick="init()">Start Camera</button>
       <div><canvas id="canvas"></canvas></div>
-      <div id="label-container"></div>
+      <span id="label-container"></span>
     </div>
     
     <!--Unity WebGL Game-->
@@ -47,7 +81,7 @@
       <div class="footer">
         <div class="webgl-logo"></div>
         <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-        <div class="title">testGame</div>
+        <div class="title">Full Screen</div>
       </div>
     </div>
 
