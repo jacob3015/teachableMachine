@@ -19,6 +19,10 @@
     <style>
       .teachable-content
       {
+        display: table;
+        margin-top: 10%;
+        margin-right: auto;
+        margin-left: auto;
       }
 
       #name
@@ -51,12 +55,12 @@
         background-color: skyblue;
       }
 
-      #unityContainer
+      .webgl-content
       {
-        width: 480px;
-        height: 300px;
+        display: table;
+        margin-right: auto;
+        margin-left: auto;
       }
-
     </style>
 
   </head>
@@ -70,17 +74,16 @@
       <div><canvas id="canvas"></canvas></div>
       <span id="label-container"></span>
     </div>
-        
+    
     <!--Unity WebGL Game-->
     <div class="webgl-content">
-      <div id="unityContainer"></div>
+      <div id="unityContainer" style="width: 480px; height: 300px"></div>
       <div class="footer">
         <div class="webgl-logo"></div>
         <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
         <div class="title">Full Screen</div>
       </div>
     </div>
-    <!--<div id="unityContainer" style="width: 480px; height: 300px"></div>-->
 
   </body>
 </html>
