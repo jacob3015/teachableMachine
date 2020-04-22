@@ -63,6 +63,7 @@ async function predict()
         {
             await sendKey(status);
             status = "stand";
+            await sendKey(status);
         }
     }
 
