@@ -60,17 +60,13 @@ async function predict()
     if(prediction[1].probability.toFixed(2) > 0.9) // stand
     {
         if(status=="jump")
-        {
             await sendKey(status);
-            status = "stand";
-            await sendKey(status);
-        }
+        status = "stand";
+        await sendKey(status);
     }
 
     if(prediction[0].probability.toFixed(2) > 0.9) // squat(jump)
-    {
         status = "jump";
-    }
 }
 
 function drawPose(pose)
