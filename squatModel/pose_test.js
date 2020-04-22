@@ -56,12 +56,20 @@ async function predict()
     // finally draw the poses
     drawPose(pose);
 
-    if(prediction[0].probability.toFixed(2) > 0.5)
-        status = "stand";
-    else
-        status = "jump";
+    // prediction[0] is squat(jump), prediction[1] is stand
+    if(prediction[1].probability.toFixed(2) > 0.9) // stand
+    {
+        if(status=="jump")
+        {
+            await sendKey(status);
+            status = "stand";
+        }
+    }
 
-    await sendKey(status);
+    if(prediction[0].probability.toFixed(2) > 0.9) // squat(jump)
+    {
+        status = "jump";
+    }
 }
 
 function drawPose(pose)
