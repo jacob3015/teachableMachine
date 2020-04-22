@@ -38,6 +38,7 @@ async function loop(timestamp)
 }
 
 var status = "stand";
+var count = 0;
 
 async function predict()
 {
@@ -57,18 +58,23 @@ async function predict()
     drawPose(pose);
 
     // prediction[0] is squat(jump), prediction[1] is stand
-    if(prediction[1].probability.toFixed(2) > 0.9) // stand
+    if(prediction[1].probability.toFixed(2) >= 0.9) // stand
     {
         if(status=="jump")
         {
-            await sendKey(status);
+            count = 1;
             status = "stand";
-        	await sendKey(status);
         }
     }
 
-    if(prediction[0].probability.toFixed(2) > 0.9) // squat(jump)
+    if(prediction[0].probability.toFixed(2) >= 0.9) // squat(jump)
         status = "jump";
+
+    if(count==1)
+    {
+        await sendKey("jump");
+        count = 0;
+    }
 }
 
 function drawPose(pose)
